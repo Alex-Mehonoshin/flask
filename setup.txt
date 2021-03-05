@@ -1,0 +1,16 @@
+I. Установка ПО
+sudo apt install python2-minimal
+sudo update-alternatives --config python
+sudo apt install curl
+curl https://bootstrap.pypa.io/2.7/get-pip.py --output get-pip.py
+sudo python2.7 get-pip.py
+pip install sqlalchemy
+pip install flask
+
+II. Проверка
+http requests:
+1) GET: curl -X "GET" http://127.0.0.1:5000/api/articles
+2) GET by id: curl -X "GET" http://127.0.0.1:5000/api/articles/1
+3) POST: curl -X POST -H "Content-Type: application/json" -d '{"author":"A.A.Blok","content":"Noch'.Ulitsa.Phonar'.Apteka."}' http://127.0.0.1:5000/api/articles
+4) PUT: curl -X PUT -H "Content-Type: application/json" -d '{"author":"A.S.Pushkin", "content":"Burya mgloyu nebo kroet"}' http://127.0.0.1:5000/api/articles/1
+5) DELETE: curl -X "DELETE" http://127.0.0.1:5000/api/articles/2
